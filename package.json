@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "next start",
     "dev": "next",
-    "build": "next build"
+    "build": "next build",
+    "css:build": "node-sass --omit-source-map-url assets/sass/style.scss static/css/style.css",
+    "css:watch": "npm run css:build -- --watch"
   },
   "repository": {
     "type": "git",
@@ -21,7 +23,10 @@
   },
   "homepage": "https://github.com/MASA-JAPAN/blog-nextjs#readme",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "bulma": "^0.8.0",
     "next": "^9.2.2",
+    "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
   },
