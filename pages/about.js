@@ -1,5 +1,3 @@
-import TheNav from "../components/TheNav";
-
 export default () => (
   <div>
     <TheNav />
@@ -11,5 +9,6 @@ export default () => (
         }
       `}
     </style>
+    <div className="testingDev">aaa</div>
   </div>
 );
