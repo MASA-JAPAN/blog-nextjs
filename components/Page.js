@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import TheHead from "./TheHead";
 import TheNav from "./TheNav";
+import TheFooter from "./TheFooter";
 
 class Page extends Component {
   render() {
@@ -9,6 +10,7 @@ class Page extends Component {
         <TheHead />
         <TheNav />
         <main>{this.props.children}</main>
+        <TheFooter />
       </div>
     );
   }

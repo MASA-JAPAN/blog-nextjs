@@ -1,6 +1,10 @@
+import Head from "next/head";
+
 export default () => (
   <div>
-    <TheNav />
+    <Head>
+      <div>title</div>
+    </Head>
     <div>About</div>
     <style jsx>
       {`
