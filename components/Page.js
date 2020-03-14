@@ -9,7 +9,7 @@ class Page extends Component {
       <div>
         <TheHead />
         <TheNav />
-        <main>{this.props.children}</main>
+        <main className="container">{this.props.children}</main>
         <TheFooter />
       </div>
     );
