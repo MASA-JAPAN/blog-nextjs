@@ -4,6 +4,7 @@ import {
   fetchCollectionDocs,
   fetchDocumentFromCollection
 } from "../lib/utility";
+import BlogList from "../components/BlogList";
 
 export default class Index extends Component {
   state = {
@@ -67,6 +68,10 @@ export default class Index extends Component {
           {this.state.blogs.map(blog => (
             <li key={blog.id}>{blog.title}</li>
           ))}
+        </div>
+        <hr />
+        <div>
+          <BlogList blogs={this.state.blogs} />
         </div>
       </div>
     );
