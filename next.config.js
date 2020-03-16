@@ -12,6 +12,14 @@ const path = require("path");
 const Dotenv = require("dotenv-webpack");
 
 module.exports = {
+  serverRuntimeConfig: {
+    secret: "123"
+  },
+
+  publicRuntimeConfig: {
+    NProgressShowSpinner: false
+  },
+
   webpack: config => {
     config.plugins = config.plugins || [];
 

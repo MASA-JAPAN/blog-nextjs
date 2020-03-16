@@ -1,11 +1,17 @@
 import React, { Component } from "react";
 import Router from "next/router";
 import NProgress from "nprogress";
+import getConfig from "next/config";
 import TheHead from "./TheHead";
 import TheNav from "./TheNav";
 import TheFooter from "./TheFooter";
 
-NProgress.configure({ showSpinner: false });
+const { serverRuntimeConfig, publicRuntimeConfig } = getConfig();
+
+console.log(serverRuntimeConfig);
+console.log(publicRuntimeConfig);
+
+NProgress.configure({ showSpinner: publicRuntimeConfig.NProgressShowSpinner });
 
 Router.onRouteChangeStart = () => {
   console.log("onRouteChangeStart");
