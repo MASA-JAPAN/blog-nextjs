@@ -9,6 +9,12 @@ const handle = app.getRequestHandler();
 app.prepare().then(() => {
   const server = express();
 
+  server.get("/blog/new", (req, res) => {
+    const actualPage = "/blog/new";
+    const query = {};
+    app.render(req, res, actualPage, query);
+  });
+
   server.get("/blog/:slug", (req, res) => {
     const actualPage = "/blog";
     const query = { slug: req.params.slug };
@@ -27,8 +33,13 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
-  server.listen(port, err => {
-    if (err) throw err;
-    console.log(`> Ready on http://localhost:${port}`);
-  });
+  server
+    .listen(port, err => {
+      if (err) throw err;
+      console.log(`> Ready on http://localhost:${port}`);
+    })
+    .catch(ex => {
+      console.log(ex.stack);
+      process.exit(1);
+    });
 });

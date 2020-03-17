@@ -1,6 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withRouter } from "next/router";
-import { fetchDocumentFromCollectionByFieldName } from "../lib/utility";
+import Link from "next/link";
+import { fetchDocumentFromCollectionByFieldName } from "../../lib/utility";
+import DateFormatter from "../../components/DateFormatter";
 
 class Blog extends Component {
   state = {
@@ -21,12 +23,15 @@ class Blog extends Component {
     if (this.state.blog === null) {
       return <div>Not found</div>;
     }
+
+    const { title, userId, intro, content, createdAt } = this.state.blog;
+
     return (
-      <div>
+      <Fragment>
         <h1>blogpage</h1>
         <h1>{this.props.router.query.slug}</h1>
         <h1>{this.state.blog.title}</h1>
-      </div>
+      </Fragment>
     );
   }
 }
